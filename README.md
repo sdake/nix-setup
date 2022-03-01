@@ -9,14 +9,9 @@ The goal is repeatable GUI minimalism, with extensive functionality within the s
 
 If you don't wear seatbelts, this command is for you:
 ```
-curl -fsSL https://raw.githubusercontent.com/sdake/nix-setup/main/go.sh | bash
-```
-
-If instead you wish to take a few steps and read the installer `go.sh`:
-```
-curl -LO https://raw.githubusercontent.com/sdake/nix-setup/main/go.sh
-./go.sh
+curl -fsSL https://raw.githubusercontent.com/sdake/nix-setup/main/remote-install/seatbelts.sh | bash
 ```
 
 Please be aware after running this tool, its hard to go back, because
-the shell behaves like a modern shell should.
+the shell behaves like a modern shell should. Also things change, and
+the prior state was not stored.
