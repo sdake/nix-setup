@@ -1,0 +1,3 @@
+- community.general.homebrew:
+    state: present
+    update_homebrew: yes

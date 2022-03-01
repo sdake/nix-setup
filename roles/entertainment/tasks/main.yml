@@ -1,0 +1,10 @@
+---
+- name: Install Entertainment Tools
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+  with_items:
+    - roon
+    - spotify
+    - tidal
+    - qobuz
+  when: ansible_facts['os_family'] == "Darwin"

@@ -1,0 +1,45 @@
+---
+- name: Tap Steve Dake's audiovisual homebrew casks
+  community.general.homebrew_tap:
+    name: sdake/homebrew-av
+    state: present
+
+- name: Install fish shell & starship
+  community.general.homebrew:
+    name: "{{ item }}"
+  with_items:
+    - fish
+    - starship
+
+- name: Get the path to fish
+  local_action: command which fish
+  register: fish
+
+- name: Ensure homebrew fish is in allowed shells
+  become: true
+  lineinfile:
+    path: /etc/shells
+    line: "{{ fish.stdout }}"
+
+- name: Add fish to this user's shell
+  become: true
+  user:
+    name: "{{ username }}"
+    shell: "{{ fish.stdout }}"
+
+- name: Install essential tools
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+    state: present
+    accept_external_apps: True
+  with_items:
+  - docker
+
+- name: Install essential tools
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+    state: present
+    accept_external_apps: True
+  with_items:
+  - iterm2
+  when: ansible_facts['os_family'] == "Darwin"

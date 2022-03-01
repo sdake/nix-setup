@@ -1,0 +1,8 @@
+---
+- name: Set sane keyboard behavior
+  shell: defaults write -g InitialKeyRepeat -int 1
+  when: ansible_facts['os_family'] == "Darwin"
+
+- name: Set sane keyboard behavior
+  shell: defaults write -g KeyRepeat -int 1
+  when: ansible_facts['os_family'] == "Darwin"

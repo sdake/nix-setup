@@ -1,0 +1,10 @@
+---
+- name: Install my AV drivers and software
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+    state: present
+    accept_external_apps: True
+  with_items:
+  - decimator
+  - imagingedge   
+  - atem

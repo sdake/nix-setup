@@ -1,0 +1,14 @@
+---
+- name: Install Productivity Tools
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+    state: present
+    accept_external_apps: True
+  with_items:
+  - 1password
+  - google-chrome
+  - notion
+  - slack
+  - microsoft-teams
+  - zoom
+  when: ansible_facts['os_family'] == "Darwin"

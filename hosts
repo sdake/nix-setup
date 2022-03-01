@@ -1,0 +1,2 @@
+[cp_nodes]
+cilium-01 ansible_host=192.168.33.179

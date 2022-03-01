@@ -1,0 +1,15 @@
+---
+- hosts: all
+  vars:
+    home_dir: "{{ lookup('env', 'HOME') }}"
+    apps_dir: "{{ home_dir }}/Library/Application Support/"
+    username: "{{ lookup('env', 'USER') }}"
+
+  roles:
+      - { role: brew_update }
+      - { role: initial }
+      - { role: audiovisual }
+      - { role: cmdline }
+      - { role: productivity }
+      - { role: entertainment }
+      - { role: mac_preferences }
