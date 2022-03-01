@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-echo "You will be prompted for your sudo password."
+echo "You will be prompted for your sudo password in the form of a BECOME prompt."
 
 # Install brew if not present
 brew -v
