@@ -16,7 +16,6 @@ if [[ "$?" -ne "0" ]]; then
 	# Install brew module, posix module
 	ansible-galaxy collection install community.general
 	ansible-galaxy collection install ansible.posix
-	ansible-galaxy install pipersniper.macos_installer
 fi
 
 ansible-playbook --ask-become-pass --inventory "localhost," --connection local playbook.yml
