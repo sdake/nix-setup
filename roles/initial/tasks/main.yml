@@ -34,12 +34,5 @@
     accept_external_apps: True
   with_items:
   - docker
-
-- name: Install essential tools
-  community.general.homebrew_cask:
-    name: "{{ item }}"
-    state: present
-    accept_external_apps: True
-  with_items:
   - iterm2
   when: ansible_facts['os_family'] == "Darwin"
