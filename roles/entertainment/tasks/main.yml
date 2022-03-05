@@ -7,4 +7,5 @@
     - spotify
     - tidal
     - qobuz
+    - vox
   when: ansible_facts['os_family'] == "Darwin"
