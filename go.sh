@@ -6,7 +6,10 @@ echo "You will be prompted for your sudo password in the form of a BECOME prompt
 brew -v
 if [[ "$?" -ne "0" ]]; then
 	bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/sdake/.profile
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
 
 # Install ansible if not present
 ansible --version
