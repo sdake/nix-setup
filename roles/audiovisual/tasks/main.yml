@@ -1,11 +1,16 @@
 ---
-- name: Install audio-visual products
-  community.general.homebrew_cask:
-    name: "{{ item }}"
-    state: present
-    accept_external_apps: True
-  with_items:
-  - decimator
-  - imagingedge   
-  - atem
+- name: search for all nerd fonts
+  shell:
+    cmd: brew install $(brew search font | grep nerd)
   when: ansible_facts['os_family'] == "Darwin"
+
+#- name: Install audio-visual products
+#  community.general.homebrew_cask:
+#    name: "{{ item }}"
+#    state: present
+#    accept_external_apps: True
+#  with_items:
+#  - decimator
+#  - imagingedge
+#  - atem
+#  when: ansible_facts['os_family'] == "Darwin"

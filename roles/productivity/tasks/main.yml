@@ -9,6 +9,5 @@
   - google-chrome
   - notion
   - slack
-  - microsoft-teams
   - zoom
   when: ansible_facts['os_family'] == "Darwin"

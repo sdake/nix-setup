@@ -4,6 +4,11 @@
     name: sdake/homebrew-av
     state: present
 
+- name: Tap font casks
+  community.general.homebrew_tap:
+    name: homebrew/cask-fonts
+    state: present
+
 - name: Install fish shell & starship
   community.general.homebrew:
     name: "{{ item }}"
