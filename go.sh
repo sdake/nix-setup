@@ -16,9 +16,7 @@ ansible --version
 if [[ "$?" -ne "0" ]]; then
 	# Install Ansible
 	brew install ansible
-	# Install brew module, posix module
 	ansible-galaxy collection install community.general
-	ansible-galaxy collection install ansible.posix
 fi
 
 ansible-playbook --ask-become-pass --inventory "localhost," --connection local playbook.yml
